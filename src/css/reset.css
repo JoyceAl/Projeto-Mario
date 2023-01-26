@@ -1,0 +1,13 @@
+* {
+    margin: 0; /*margem ao redor do elemento/caixa*/
+    padding: 0; /*?*/
+    box-sizing: border-box; /*??*/
+}
+
+ul { /*lista de elementos desordenados*/
+    list-style: none; /*estilo da lista*/
+}
+
+a {
+    text-decoration: none; /*tirando texto em azul*/
+}

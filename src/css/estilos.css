@@ -1,0 +1,143 @@
+body {
+    font-family: 'Poppins';
+}
+
+.cabecalho {
+    display: flex; /*deixou a logo e o menu um do lado do outro (??)*/
+    flex-direction: row; /*a direção em linha, jaa esta por padrão no display flex*/
+    justify-content: space-between; /*distribui os elementos no espaço em que estão*/
+    padding: 30px;
+    max-width: 1440px; /*definindo o comprimento maximo do bloco do cabecalho*/
+    margin: 0 auto; /*o que sobrou dos lados do bloco, ele divide em dois e centraliza o blocão no meio*/
+}
+
+.cabecalho .logo {
+    width: 65px; /*diminuir a largura, definindo a largura*/
+}
+
+.cabecalho .menu {
+    display: flex; /*deixou os itens do menu um do lado do outro*/
+    align-items: center; /*alinhar os itens no centro do seu bloco*/
+    height: 100%; /*aumentando o tamanho do bloco para que tivesse espaço para alinhar no centro do cabeçalho/pai*/
+}
+
+.cabecalho nav li a { /*estilizando a tag a*/
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 25px;
+    padding: 10px 20px;
+    border-radius: 50px; /*arredondando as bordas do menu*/
+    transition: 0.2s; /*tempo que ele vai aparecer quando o mouse sobrevoar o menu*/
+}
+
+.cabecalho nav li a:hover { /*hover:sobrevoando, quando passar o mouse em cima*/
+    background-color: #d5011d;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    /*height: 100vh; /*vh - altura da tela do usuario*/
+    height: calc (100vh - 132px); /*usando uma função para fazer um calculo, tirando o valor de 100% da tela com o tamanho do menu, que esta somando junto e dando scrum/rolagem na tela.*/
+    padding: 0 30px 30px;
+}
+
+.container .imagem-titulo {
+    max-width: 500px; /*largura máxima na imagem do título*/
+}
+
+.container .descricao {
+    color: #a8abd7;
+    width: 85%;
+    font-size: 18px;
+    margin: 30 px 0;
+}
+
+.container .botao-trailer {
+    background-color: #ff0021; /*cor de fundo*/
+    color: #ffffff; /*cor do texto*/
+    padding: 15px; /*espaçamento do conteúdo para a borda do seu bloco*/
+    font-size: 18px; /*tamanho da fonte*/
+    font-weight: bold; /*peso pra fonte, esse deixa negrito*/
+    cursor: pointer;
+    border: none; /*tirando a borda*/
+    text-transform: uppercase; /*formantando o texto para maiusculo*/
+    transition: 0.5s all ease-in-out;
+}
+
+.container .botao-trailer:hover {/*sobrevoando o boão com o mouse*/
+    transform: scale(1.1); /*função de escala, no caso vai aumentar a escala do botão quando o mouse passar por cima*/
+}
+
+.fundo-video {
+    background-color: red;
+    position: absolute; /*cria uma nova folha/camada com o elemento em questão. no caso, o vídeo vai ficar na frente de todos os outros elementos, como se fosse uma folha adicionada.*/
+    z-index: -1; /*eixo z, eixo de profundidade. numero negativo para jogar ele pra camada de trás.*/
+    width: 100vw; /*ocupa 100% da largura da tela do usuario*/
+    height: 100vh; /*ocupa 100% da altura da tela do usuario*/
+    overflow: hidden; /*ele esta transbordando, e causando um pequeno scrool, o overflow hidden esconde ele*/
+    display: flex;
+    justify-content: center;
+}
+
+.fundo-video .video {
+    height: 100vh;
+}
+
+.fundo-video::after {
+    content: "";
+    background-color: #d5011d;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, #040203 0%, rgba(0,0,0,0.85) 49%, #040203 100%);
+}
+
+.modal {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(52,52,50,0.749);
+    visibility: hidden;
+}
+
+.conteudo-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    border-radius: 5px;
+    gap: 15px;
+}
+
+.fechar-modal {
+    background-color: #ffffff;
+    color: #f03a17;
+    font-weight: bold;
+    font-size: 20px;
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.modal iframe {
+    border-width: 0; /*largura da borda*/
+    width: 640px;
+    height: 360px;
+}
+
+.modal.aberto { /*quando o nome ta juntinho e separado pelo ponto '.', é pra estilização pegar nas duas classes.*/
+    opacity: 1;
+    visibility: visible;
+}
+
+/*PAREI MAIS DA METADE DO VIDEO, NA PARTE DE PASSAR O MOUSE EM CIMA DO BOTÃO E ELE AUMENTAR LEVEMENTE.*/
+
